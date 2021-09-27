@@ -1,14 +1,15 @@
 #include "monty.h"
 
 /**
- * get_instruction - s
- * @stack: s
- * @inst: s
- * @line_number: s
+ * get_instruction - decide what function to call
+ * @stack: stack data structure
+ * @inst: operator
+ * @index: line in byte-code file being processed
  **/
 void get_instruction(stack_t **stack, char *inst, unsigned int index)
 {
 	int i = 0;
+
 	instruction_t array_inst[] = {
 		{"push", push},
 		{"pall", pall},
@@ -29,4 +30,3 @@ void get_instruction(stack_t **stack, char *inst, unsigned int index)
 		exit(EXIT_FAILURE);
 	}
 }
-

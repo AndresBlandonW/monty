@@ -1,5 +1,5 @@
 #ifndef Montyh_Header
-#define Montyh_Header
+0;136;0c#define Montyh_Header
 
 #define  _GNU_SOURCE
 #include <stdlib.h>
@@ -24,9 +24,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -39,23 +39,19 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-typedef struct monties_s
-{
-	stack_t **add;
-} monties_t;
-
-extern monties_t mty;
-
-void stack_i(stack_t **head);
+void instack(stack_t **head);
 void get_instruction(stack_t **stack, char *inst, unsigned int index);
 int compile_file(char *filen, stack_t **stack);
-stack_t *add_dnodeint(stack_t **head, const int n);
+stack_t *add_dnodeint(stack_t **head, const int num);
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
 
+void free_all(void);
 #endif
