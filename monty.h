@@ -1,5 +1,5 @@
 #ifndef Montyh_Header
-0;136;0c#define Montyh_Header
+#define Montyh_Header
 
 #define  _GNU_SOURCE
 #include <stdlib.h>
